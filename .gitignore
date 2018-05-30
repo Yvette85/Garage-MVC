@@ -259,3 +259,15 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/GarageReturn/GarageReturn/Migrations/201805281429566_Validation3.resx
+/GarageReturn/GarageReturn/Migrations/201805281429566_Validation3.Designer.cs
+/GarageReturn/GarageReturn/Migrations/201805281429566_Validation3.cs
+/GarageReturn/GarageReturn/Migrations/201805280902200_validation 2.resx
+/GarageReturn/GarageReturn/Migrations/201805280902200_validation 2.Designer.cs
+/GarageReturn/GarageReturn/Migrations/201805280902200_validation 2.cs
+/GarageReturn/GarageReturn/Migrations/201805280806245_Validation.resx
+/GarageReturn/GarageReturn/Migrations/201805280806245_Validation.Designer.cs
+/GarageReturn/GarageReturn/Migrations/201805280806245_Validation.cs
+/GarageReturn/GarageReturn/Migrations/201805280647080_20180528.resx
+/GarageReturn/GarageReturn/Migrations/201805280647080_20180528.Designer.cs
+/GarageReturn/GarageReturn/Migrations/201805280647080_20180528.cs

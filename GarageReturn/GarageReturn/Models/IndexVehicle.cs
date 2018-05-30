@@ -20,7 +20,6 @@ namespace GarageReturn.Models
             RegNum = v.RegNum;
             Color = v.Color;
            
-
         }
     }
 }

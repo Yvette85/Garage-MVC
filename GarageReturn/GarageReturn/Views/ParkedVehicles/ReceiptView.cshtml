@@ -1,0 +1,65 @@
+﻿@model GarageReturn.Models.ReceiptViewModel
+
+@{
+    ViewBag.Title = "ReceiptView";
+}
+
+<h2>ReceiptView</h2>
+
+<div>
+    <h4>ReceiptViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+
+<p>Click the button to print the current page.</p>
+
+<button onclick="myFunction()">Print out the receipt</button>
+
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+
+
+@Html.ActionLink("Back to List", "Index")
+</p>

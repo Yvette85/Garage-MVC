@@ -1,9 +1,10 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using GarageReturn.DataAccessLayer;
@@ -13,28 +14,36 @@ namespace GarageReturn.Controllers
 {
     public class ParkedVehiclesController : Controller
     {
+
+
         private StorageContext db = new StorageContext();
-      
+
         // GET: ParkedVehicles
-        public ActionResult Index( string sortOrder)
+        public ActionResult Index(string sortOrder)
 
         {
+            var parkedVehicle = db.vehicles.ToList();
 
+            if (sortOrder == "Ascending")
+            {
+               parkedVehicle = parkedVehicle.OrderBy(s => s.RegNum).ToList();
+            }
 
-
-
-
+            else if(sortOrder == "Descending")
+            {
+                 parkedVehicle = parkedVehicle.OrderByDescending(s => s.RegNum) .ToList();
+            }
 
 
             List<IndexVehicle> iv = new List<IndexVehicle>();
-            foreach (ParkedVehicle e in db.vehicles.ToList())
+            foreach (ParkedVehicle e in parkedVehicle.ToList())
 
             {
                 iv.Add(new IndexVehicle(e));
             }
             return View(iv);
         }
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Search(string search)
         {
 
@@ -84,10 +93,11 @@ namespace GarageReturn.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNum,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,VehicleTypes,RegNum,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
+                parkedVehicle.ParkedTime = DateTime.Now;
                 db.vehicles.Add(parkedVehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -165,10 +175,15 @@ namespace GarageReturn.Controllers
 
             ParkedVehicle parkedVehicle = db.vehicles.Find(id);
 
-            VehiclesViewModel I = new VehiclesViewModel(parkedVehicle.Id, parkedVehicle.RegNum, parkedVehicle.VehicleTypes, DateTime.Now, parkedVehicle.ParkedTime);
+            ReceiptViewModel s = new ReceiptViewModel(parkedVehicle.Id, parkedVehicle.RegNum, parkedVehicle.VehicleTypes, DateTime.Now, parkedVehicle.ParkedTime, 1.5M);
+          
+          
+
             db.vehicles.Remove(parkedVehicle);
+
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            return View("ReceiptView" ,s);
 
            
         }
