@@ -20,7 +20,7 @@ namespace GarageReturn.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            ParkedVehicle P = new ParkedVehicle() { VehicleTypes = VehiclesTypes.Bus, RegNum = " EDS882", Color = " Blue", Brand = " BMW", Model = "Z4 ", NumberOfWheels = 4 };
+            ParkedVehicle P = new ParkedVehicle() { VehicleTypes = VehiclesTypes.Bus, RegNum = " EDS882", Color = " Blue", Brand = " BMW", Model = "Z4 ", NumberOfWheels = 4, ParkedTime=DateTime.Now };
             context.vehicles.AddOrUpdate(t => t.Id, P);
             context.vehicles.AddOrUpdate(t => t.VehicleTypes, P);
             context.vehicles.AddOrUpdate(t => t.RegNum, P);

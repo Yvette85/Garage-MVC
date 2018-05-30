@@ -27,28 +27,33 @@
         <th>
             @Html.DisplayNameFor(model => model.VehicleTypes)
         </th>
+
+
         <th>
+            @Html.ActionLink("RegNum", "Index", new {sortOrder = "Descending"})
+        </th>
+
+
+        @*<th>
 
 
             @Html.DisplayNameFor(model => model.RegNum)
 
-
-
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
 
 
         @*<th>
-                @Html.DisplayNameFor(model => model.Brand )
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfWheels)
-            </th>*@
+            @Html.DisplayNameFor(model => model.Brand )
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfWheels)
+        </th>*@
         <th></th>
     </tr>
 
@@ -84,3 +89,6 @@
     }
 
 </table>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

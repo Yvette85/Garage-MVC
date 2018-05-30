@@ -18,9 +18,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.VehicleTypes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.VehicleTypes,"" , new { @class = "form-control" }  )
+                @Html.EnumDropDownListFor(model => model.VehicleTypes, " " , new { @class = "form-control" }  )
           
-                @Html.ValidationMessageFor(model => model.VehicleTypes, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.VehicleTypes, " ", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             @Html.LabelFor(model => model.RegNum, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RegNum, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RegNum, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.RegNum, " ", new { @class = "text-danger" })
             </div>
         </div>
 

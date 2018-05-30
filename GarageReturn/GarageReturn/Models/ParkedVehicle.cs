@@ -12,16 +12,14 @@ namespace GarageReturn.Models
 
         public int Id { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Vehicle type is required")]
-
-       
+        [Required (ErrorMessage = "Vehicle type is required")]
         public VehiclesTypes VehicleTypes { get; set; }
 
         [Required(ErrorMessage = "Please , specify the Registration number")]
-
         public string RegNum { get; set; }
 
         [Required(ErrorMessage = "Please , specify the color of the vehicle")]
+
         public string Color { get; set; }
 
         [Required(ErrorMessage = "Please , specify the brand of the vehicle")]
