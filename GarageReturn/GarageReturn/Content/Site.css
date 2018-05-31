@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    
+    background-image: url('backgroundimage/background image.jpg');
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -26,3 +29,16 @@ textarea {
 input#search {
         margin-bottom: 20px;
     }
+th {
+    color: white;
+}
+
+td {
+    color: white;
+}
+a {
+    color: white;
+}
+h2 {
+    color: white;
+}

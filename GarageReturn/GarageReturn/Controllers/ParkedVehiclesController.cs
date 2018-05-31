@@ -154,13 +154,17 @@ namespace GarageReturn.Controllers
             }
             ParkedVehicle parkedVehicle = db.vehicles.Find(id);
 
-            VehiclesViewModel s = new VehiclesViewModel (parkedVehicle.Id, parkedVehicle.RegNum, parkedVehicle.VehicleTypes, DateTime.Now, parkedVehicle.ParkedTime);
+          
 
 
             if (parkedVehicle == null)
             {
+               
                 return HttpNotFound();
             }
+
+            VehiclesViewModel s = new VehiclesViewModel(parkedVehicle.Id, parkedVehicle.RegNum, parkedVehicle.VehicleTypes, DateTime.Now, parkedVehicle.ParkedTime);
+
             return View(s);
         }
 
