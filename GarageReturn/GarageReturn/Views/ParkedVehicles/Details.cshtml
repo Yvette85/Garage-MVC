@@ -1,4 +1,4 @@
-﻿@model GarageReturn.Models.ParkedVehicle
+﻿@model GarageReturn.Models.Park
 
 @{
     ViewBag.Title = "Details";
@@ -10,14 +10,22 @@
     <h4>ParkedVehicle</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VehicleTypes)
+        @*<dt>
+            @Html.DisplayNameFor(model => model.VehiclesType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.VehicleTypes)
-        </dd>
+            @Html.DisplayFor(model => model.VehiclesType)
+        </dd>*@
 
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemberId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemberId)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.RegNum)
         </dt>
@@ -58,6 +66,14 @@
             @Html.DisplayFor(model => model.NumberOfWheels)
         </dd>
 
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkedTime)
+        </dt>
     </dl>
 </div>
 <p>

@@ -7,7 +7,17 @@ namespace GarageReturn.Models
 {
     public class VehiclesViewModel
     {
-        public VehiclesViewModel(int id, string regNum, VehiclesTypes vehicleType, DateTime time, DateTime parkedTime)
+        private DateTime now;
+
+        public VehiclesViewModel(int id, string regNum, DateTime now, DateTime parkedTime)
+        {
+            Id = id;
+            RegNum = regNum;
+            this.now = now;
+            ParkedTime = parkedTime;
+        }
+
+        public VehiclesViewModel(int id, string regNum, string vehicleType, DateTime time, DateTime parkedTime)
         {
             Id = id;
             RegNum = regNum;
@@ -19,7 +29,7 @@ namespace GarageReturn.Models
 
         public int Id { get; set; }
         public string RegNum { get; set; }
-        public VehiclesTypes VehicleType { get; set; }
+        public string VehicleType { get; set; }
         public DateTime Time { get; set; }
         public DateTime ParkedTime { get; set; }
         

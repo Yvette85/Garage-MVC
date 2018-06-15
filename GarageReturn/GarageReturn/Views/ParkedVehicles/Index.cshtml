@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Park New", "Create")
+    @Html.ActionLink("Park New", "Create" )
 </p>
 
 @using (Html.BeginForm("Search", "ParkedVehicles", FormMethod.Post))
@@ -22,17 +22,19 @@
 <table class="table">
     <tr>
 
-
-
         <th>
-            @Html.DisplayNameFor(model => model.VehicleTypes)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
 
 
         <th>
-            @Html.ActionLink("RegNum", "Index", new {sortOrder = "Descending"})
+            @Html.DisplayNameFor(model => model.VehType)
         </th>
 
+
+        <th>
+            @Html.ActionLink("RegNum", "Index", new { sortOrder = "Descending" })
+        </th>
 
         @*<th>
 
@@ -40,52 +42,68 @@
             @Html.DisplayNameFor(model => model.RegNum)
 
         </th>*@
+
+
         <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
 
+        <th>
+            @Html.DisplayNameFor(model => model.ParkedTime)
+        </th>
 
-        @*<th>
-            @Html.DisplayNameFor(model => model.Brand )
+
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Model)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NumberOfWheels)
-        </th>*@
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.VehicleTypes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
 
 
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Model)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberOfWheels)
-                </td>*@
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("check out", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehType)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkedTime)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfWheels)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("check out", "Delete", new { id = item.Id })
+        </td>
+    </tr>
     }
 
 </table>

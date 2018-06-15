@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,13 +7,28 @@ using System.Web.Mvc;
 
 namespace GarageReturn.Models
 {
-    public class ParkedVehicle
+    public class Park
+
     {
+     public int vehiclesTypeId;
+
+        public Park()
+        {
+        }
+
+        public Park(string brand, string color, string model, DateTime parkedTime, string regNum, int numberOfWheels, int vehiclesTypeId, int memberId)
+        {
+            Brand = brand;
+            Color = color;
+            Model = model;
+            ParkedTime = parkedTime;
+            RegNum = regNum;
+            NumberOfWheels = numberOfWheels;
+            this.vehiclesTypeId = vehiclesTypeId;
+            MemberId = memberId;
+        }
 
         public int Id { get; set; }
-
-        //[Required (ErrorMessage = "Vehicle type is required")]
-        //public VehiclesTypes VehicleTypes { get; set; }
 
         [Required(ErrorMessage = "Please , specify the Registration number")]
         public string RegNum { get; set; }
@@ -32,27 +46,12 @@ namespace GarageReturn.Models
         [Required(ErrorMessage = "Please , specify the number of wheels")]
         public int NumberOfWheels { get; set; }
 
-      
+        public int MemberId { get; set; }
+        public int VehicleTypesId { get; set; }
         public DateTime ParkedTime { get; set; }
 
-
-        public int MemberId { get; set; }
-
-        public virtual Member Member { get; set; }
-
-        public int VehiclesTypeId { get; set; }
-
-        public virtual VehicleType VehiclesType { get; set; }
-
-
-
+        public IEnumerable<SelectListItem> ListMembers { get; set; }
+        public IEnumerable<SelectListItem> ListVehicleTypes { get; set; }
+  
     }
-    //public enum VehiclesTypes
-    //{
-    //    Bus,
-    //    Car,
-    //    Motorcycle,
-    //    Truck
-    //}
-
 }

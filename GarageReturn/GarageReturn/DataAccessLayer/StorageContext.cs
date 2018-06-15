@@ -9,10 +9,13 @@ namespace GarageReturn.DataAccessLayer
 {
     public class StorageContext : DbContext
     {
-        public StorageContext() : base ("Exercise12")
+        public StorageContext() : base("Exercise12")
         {
 
         }
-        public DbSet<ParkedVehicle> vehicles{ get; set; }
+        public DbSet<ParkedVehicle> vehicles { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<VehicleType> VehicleTypes { get; set; }
+
     }
 }

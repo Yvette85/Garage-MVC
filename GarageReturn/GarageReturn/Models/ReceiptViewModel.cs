@@ -7,7 +7,19 @@ namespace GarageReturn.Models
 {
     public class ReceiptViewModel
     {
-        public ReceiptViewModel(int id, string regNum, VehiclesTypes vehicleType, DateTime time, DateTime parkedTime, decimal price)
+        public DateTime now;
+       public decimal v;
+
+        public ReceiptViewModel(int id, string regNum, DateTime now, DateTime parkedTime, decimal v)
+        {
+            Id = id;
+            RegNum = regNum;
+            this.now = now;
+            ParkedTime = parkedTime;
+            this.v = v;
+        }
+
+        public ReceiptViewModel(int id, string regNum, string vehicleType, DateTime time, DateTime parkedTime, decimal price)
         {
             Id = id;
             RegNum = regNum;
@@ -19,9 +31,10 @@ namespace GarageReturn.Models
 
         public int Id { get; set; }
         public string RegNum { get; set; }
-        public VehiclesTypes VehicleType { get; set; }
+        public string VehicleType { get; set; }
         public DateTime Time { get; set; }
         public DateTime ParkedTime { get; set; }
         public decimal Price { get; set; }
     }
 }
+ 

@@ -142,48 +142,26 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="DataAccessLayer\StorageContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805211011105_Init.cs" />
-    <Compile Include="Migrations\201805211011105_Init.Designer.cs">
-      <DependentUpon>201805211011105_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201806140953317_test1.cs" />
+    <Compile Include="Migrations\201806140953317_test1.Designer.cs">
+      <DependentUpon>201806140953317_test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805220809482_Valid.cs" />
-    <Compile Include="Migrations\201805220809482_Valid.Designer.cs">
-      <DependentUpon>201805220809482_Valid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805220938298_2018-05-22.cs" />
-    <Compile Include="Migrations\201805220938298_2018-05-22.Designer.cs">
-      <DependentUpon>201805220938298_2018-05-22.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805251012397_1212.cs" />
-    <Compile Include="Migrations\201805251012397_1212.Designer.cs">
-      <DependentUpon>201805251012397_1212.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805251018490_1218.cs" />
-    <Compile Include="Migrations\201805251018490_1218.Designer.cs">
-      <DependentUpon>201805251018490_1218.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805280647080_20180528.cs" />
-    <Compile Include="Migrations\201805280647080_20180528.Designer.cs">
-      <DependentUpon>201805280647080_20180528.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805280806245_Validation.cs" />
-    <Compile Include="Migrations\201805280806245_Validation.Designer.cs">
-      <DependentUpon>201805280806245_Validation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805280902200_validation 2.cs" />
-    <Compile Include="Migrations\201805280902200_validation 2.Designer.cs">
-      <DependentUpon>201805280902200_validation 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805281429566_Validation3.cs" />
-    <Compile Include="Migrations\201805281429566_Validation3.Designer.cs">
-      <DependentUpon>201805281429566_Validation3.cs</DependentUpon>
+    <Compile Include="Migrations\201806141127506_test2.cs" />
+    <Compile Include="Migrations\201806141127506_test2.Designer.cs">
+      <DependentUpon>201806141127506_test2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\EditViewModel.cs" />
+    <Compile Include="Models\Park.cs" />
+    <Compile Include="Models\VehicleType.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Controllers\ParkedMemberViewModelsController.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
     <Compile Include="Models\VehiclesViewModel.cs" />
     <Compile Include="Models\IndexVehicle.cs" />
@@ -234,6 +212,11 @@
     <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\ReceiptView.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,32 +236,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805211011105_Init.resx">
-      <DependentUpon>201805211011105_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806140953317_test1.resx">
+      <DependentUpon>201806140953317_test1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805220809482_Valid.resx">
-      <DependentUpon>201805220809482_Valid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805220938298_2018-05-22.resx">
-      <DependentUpon>201805220938298_2018-05-22.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805251012397_1212.resx">
-      <DependentUpon>201805251012397_1212.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805251018490_1218.resx">
-      <DependentUpon>201805251018490_1218.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805280647080_20180528.resx">
-      <DependentUpon>201805280647080_20180528.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805280806245_Validation.resx">
-      <DependentUpon>201805280806245_Validation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805280902200_validation 2.resx">
-      <DependentUpon>201805280902200_validation 2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805281429566_Validation3.resx">
-      <DependentUpon>201805281429566_Validation3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806141127506_test2.resx">
+      <DependentUpon>201806141127506_test2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
