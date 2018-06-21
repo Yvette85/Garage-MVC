@@ -55,13 +55,17 @@ namespace GarageReturn.Controllers
         [HttpPost]
         public ActionResult Search(string search)
         {
+            
 
-            List<IndexVehicle> iv = new List<IndexVehicle>();
+        List<IndexVehicle> iv = new List<IndexVehicle>();
 
-            foreach (ParkedVehicle e in db.vehicles.Where(s => s.RegNum.Contains(search) || s.Color.Contains(search) ).ToList() )
+         
 
+            foreach (ParkedVehicle e in db.vehicles.Where(s => s.RegNum.Contains(search) || s.VehiclesType.Name.Contains(search) || s.Color.Contains(search)).ToList() )
 
             {
+                
+
                 iv.Add(new IndexVehicle(e));
             }
 
@@ -69,8 +73,6 @@ namespace GarageReturn.Controllers
 
 
         }
-
-
 
 
 
