@@ -61,7 +61,7 @@ namespace GarageReturn.Controllers
 
          
 
-            foreach (ParkedVehicle e in db.vehicles.Where(s => s.RegNum.Contains(search) || s.VehiclesType.Name.Contains(search) || s.Color.Contains(search)).ToList() )
+            foreach (ParkedVehicle e in db.vehicles.Where(s => s.RegNum.Contains(search) || s.VehiclesType.Name.Contains(search) || s.Color.Contains(search) || s.Member.FirstName.Contains(search)).ToList() )
 
             {
                 
@@ -228,14 +228,15 @@ namespace GarageReturn.Controllers
         // GET: ParkedVehicles/Delete/5
         public ActionResult Delete(int? id )
         {
-            
+
+            var park = db.Members.ToList();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ParkedVehicle parkedVehicle = db.vehicles.Find(id);
 
-          
 
 
             if (parkedVehicle == null)
@@ -243,10 +244,11 @@ namespace GarageReturn.Controllers
                
                 return HttpNotFound();
             }
+          
 
-            VehiclesViewModel s = new VehiclesViewModel(parkedVehicle.Id, parkedVehicle.RegNum, DateTime.Now, parkedVehicle.ParkedTime);
+            VehiclesViewModel v = new VehiclesViewModel (parkedVehicle.Id, parkedVehicle.RegNum, parkedVehicle.VehiclesType.Name, parkedVehicle.ParkedTime, DateTime.Now );
 
-            return View(s);
+            return View(v);
         }
 
         // POST: ParkedVehicles/Delete/5
@@ -256,13 +258,15 @@ namespace GarageReturn.Controllers
 
         public ActionResult DeleteConfirmed(int id)
         {
-           
+            
 
             ParkedVehicle parkedVehicle = db.vehicles.Find(id);
 
-            ReceiptViewModel s = new ReceiptViewModel(parkedVehicle.Id, parkedVehicle.RegNum, DateTime.Now, parkedVehicle.ParkedTime, 1.5M);
-          
-          
+            
+            ReceiptViewModel s = new ReceiptViewModel(parkedVehicle.Id, parkedVehicle.RegNum,parkedVehicle.VehiclesType.Name,parkedVehicle.ParkedTime,DateTime.Now ,  parkedVehicle.Member.FirstName);
+            var park = db.Members.ToList();
+
+
 
             db.vehicles.Remove(parkedVehicle);
 

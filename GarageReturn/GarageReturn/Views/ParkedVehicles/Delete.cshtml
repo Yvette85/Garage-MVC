@@ -11,6 +11,15 @@
     <h4>ParkedVehicle</h4>
     <hr />
     <dl class="dl-horizontal">
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.member.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member.FirstName)
+        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.VehicleType)
         </dt>
@@ -31,12 +40,12 @@
             @Html.DisplayFor(model => model.ParkedTime)
         </dd>
 
-      
-       
+
+
         <dd>
-            @Html.DisplayFor(model => model.Time)
+            @Html.DisplayFor(model => model.NowTime)
         </dd>
-        
+
         @*<dt>
             @Html.DisplayNameFor(model => model.Color)
         </dt>*@

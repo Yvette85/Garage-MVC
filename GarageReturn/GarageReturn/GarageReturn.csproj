@@ -148,20 +148,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806140953317_test1.cs" />
-    <Compile Include="Migrations\201806140953317_test1.Designer.cs">
-      <DependentUpon>201806140953317_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806141127506_test2.cs" />
-    <Compile Include="Migrations\201806141127506_test2.Designer.cs">
-      <DependentUpon>201806141127506_test2.cs</DependentUpon>
+    <Compile Include="Migrations\201806251913225_20180625.cs" />
+    <Compile Include="Migrations\201806251913225_20180625.Designer.cs">
+      <DependentUpon>201806251913225_20180625.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Models\Park.cs" />
     <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Controllers\ParkedMemberViewModelsController.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
     <Compile Include="Models\VehiclesViewModel.cs" />
     <Compile Include="Models\IndexVehicle.cs" />
@@ -236,11 +231,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806140953317_test1.resx">
-      <DependentUpon>201806140953317_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141127506_test2.resx">
-      <DependentUpon>201806141127506_test2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806251913225_20180625.resx">
+      <DependentUpon>201806251913225_20180625.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
